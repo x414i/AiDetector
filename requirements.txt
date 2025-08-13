@@ -1,0 +1,10 @@
+flask
+numpy
+sentence-transformers
+scikit-learn
+sqlalchemy
+pyarabic
+googletrans==4.0.0-rc1
+nltk
+psycopg2-binary
+psycopg2

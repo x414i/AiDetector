@@ -1,0 +1,26 @@
+app = 'python-simialrity'  # Your app name
+primary_region = 'ams'     # Your primary region
+
+[build]
+  # Specify the Dockerfile if you have one, or use the default build process
+  # If you have a requirements.txt, Fly will automatically detect it
+  # and build a Python environment for you.
+  # If you want to use a Dockerfile, uncomment the line below:
+  # dockerfile = 'Dockerfile'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'  # This is the default behavior
+  auto_start_machines = true
+  min_machines_running = 1  # Keep at least one machine running
+  max_machines_running = 1  # Limit to one machine to avoid scaling down
+
+[[vm]]
+  memory = '2gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[env]
+  FLASK_APP = "app"  # Set your Flask app name here (if your main file is app.py)
+  # Add any other environment variables your app needs here
